@@ -36,7 +36,9 @@ GRAPH* createGraphFromFile(char* fileName){
 
     FILE *file = fopen(fileName, "r");
     if(file == NULL){
-        printf("ERROR - couldn't open file");
+        printf("ERROR - couldn't open file\n");
+        return NULL;
+
     }
 
 // Use fscanf
