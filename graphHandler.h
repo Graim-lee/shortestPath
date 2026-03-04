@@ -16,6 +16,11 @@ GRAPH* createGraph(int nbVertices, int nbArcs);
  * @return A n by n matrix (n the number of vertices)
  */
 GRAPH* createGraphFromFile(char* fileName);
+
+/**
+ * Display the "adjacency matrix" of the graph
+ */
 void displayMatrix(int** matrix, int nbVertices);
+
 
 #endif //SHORTESTPATH_GRAPHHANDLER_H

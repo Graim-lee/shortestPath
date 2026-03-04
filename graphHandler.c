@@ -21,8 +21,8 @@ GRAPH* createGraph(int nbVertices, int nbArcs){
     graph->matrix = matrix;
 
     int** arcs = (int **)malloc(nbArcs * (sizeof(int*)));
-    for(int i =0; i<nbVertices; i++){
-        matrix[i] = (int*)malloc(3 * sizeof(int));
+    for(int i =0; i<nbArcs; i++){
+        arcs[i] = (int*)malloc(3 * sizeof(int));
     }
     graph->arcs = arcs;
 
@@ -65,9 +65,25 @@ GRAPH* createGraphFromFile(char* fileName){
 
 void displayMatrix(int** matrix, int nbVertices){
 
-    for(int i =0; i<nbVertices; i++){
-        for(int y = 0; y<nbVertices; y++){
-            printf("%d ", matrix[i][y]);
+    // Column headers
+    printf("    ");
+    for(int i = 0; i < nbVertices; i++){
+        printf("%3d ", i); // number 3 gives space between numbers
+    }
+    printf("\n");
+
+    // Separator
+    printf("   ");
+    for(int i = 0; i < nbVertices; i++){
+        printf("----");
+    }
+    printf("\n");
+
+    // Row header
+    for(int i = 0; i < nbVertices; i++){
+        printf("%2d | ", i);
+        for(int y = 0; y < nbVertices; y++){
+            printf("%3d ", matrix[i][y]);
         }
         printf("\n");
     }
