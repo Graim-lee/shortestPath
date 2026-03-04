@@ -1,7 +1,9 @@
 #include "graphHandler.h"
+#include "menu.h"
 
 int main(){
-    GRAPH* graph = createGraphFromFile("../graph2.txt");
+    GRAPH* graph = choose_graph();
     displayMatrix(graph->matrix, graph->nbVertices);
+
     return 0;
 }

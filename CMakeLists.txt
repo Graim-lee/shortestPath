@@ -8,4 +8,6 @@ include_directories(.)
 add_executable(shortestPath
     graphHandler.c
     graphHandler.h
-    main.c)
+    main.c
+        menu.h
+        menu.c)
