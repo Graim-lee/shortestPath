@@ -2,8 +2,14 @@
 #include "menu.h"
 
 int main(){
-    GRAPH* graph = choose_graph();
+
+    int step = 0;
+    GRAPH* graph;
+    graph = displayguidlines(&step, graph);
+    graph = displayguidlines(&step, graph);
     displayMatrix(graph->matrix, graph->nbVertices);
+
+    freeGraph(graph);
 
     return 0;
 }
