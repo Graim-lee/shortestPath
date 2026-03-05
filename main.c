@@ -3,13 +3,18 @@
 
 int main(){
 
-    int step = 0;
-    GRAPH* graph;
-    graph = displayguidlines(&step, graph);
-    graph = displayguidlines(&step, graph);
-    displayMatrix(graph->matrix, graph->nbVertices);
+    int step;
+    while (1)
+    {
+        step = 0;
+        GRAPH* graph;
+        graph = displayguidlines(&step, graph);
+        graph = displayguidlines(&step, graph);
+        displayMatrix(graph->matrix, graph->nbVertices);
 
-    freeGraph(graph);
+        freeGraph(graph);
+    }
+
 
     return 0;
 }
