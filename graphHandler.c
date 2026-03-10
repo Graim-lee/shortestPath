@@ -7,6 +7,7 @@ GRAPH* createGraph(int nbVertices, int nbArcs){
     graph->nbVertices = nbVertices;
     graph->nbArcs = nbArcs;
 
+    // 2D array so double pointer array
     int** matrix = (int **)malloc(nbVertices * (sizeof(int*)));
     for(int i =0; i<nbVertices; i++){
         matrix[i] = (int*)malloc(nbVertices * sizeof(int));
@@ -20,6 +21,9 @@ GRAPH* createGraph(int nbVertices, int nbArcs){
 
     graph->matrix = matrix;
 
+    //arcs[i][0]  // start vertex
+    //arcs[i][1]  // end vertex
+    //arcs[i][2]  // weight
     int** arcs = (int **)malloc(nbArcs * (sizeof(int*)));
     for(int i =0; i<nbArcs; i++){
         arcs[i] = (int*)malloc(3 * sizeof(int));

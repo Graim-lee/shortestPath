@@ -1,8 +1,12 @@
-//
-// Created by Antoine on 04/03/2026.
-//
+#ifndef FLOYDWARSHALL_H
+#define FLOYDWARSHALL_H
 
-#ifndef SHORTESTPATH_FLOYDWARSHALL_H
-#define SHORTESTPATH_FLOYDWARSHALL_H
+#include "graphHandler.h"
 
-#endif //SHORTESTPATH_FLOYDWARSHALL_H
+#define INF 99999
+
+int floydWarshall(GRAPH* graph, int*** L, int*** P);
+void displayResult(int** dist, int nbVertices);
+void displayPath(int** P, int start, int end, int nbVertices);
+
+#endif
