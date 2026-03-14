@@ -12,7 +12,7 @@ int main(){
 
         if(graphNumber == -1) break;
 
-        sprintf(fileName, "../graph%d.txt", graphNumber);
+        sprintf(fileName, "../graphs/graph%d.txt", graphNumber);
 
         GRAPH* graph = createGraphFromFile(fileName);
         if(graph == NULL){
