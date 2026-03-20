@@ -6,9 +6,10 @@ which is dedicated to computing the transitive closure of a graph. The computati
 closure is adapted in order to retain, among all paths connecting two vertices, those with the smallest
 value. 
 
-<p align="center">![img.png](img.png)</p>
-<p align="center">Figure 1.1, Substructure of the Floyd Warshall Algorithm</p>
-
+<p align="center">
+  <img src="img.png" alt="Floyd Warshall diagram">
+</p>
+<p align="center"><em>Figure 1.1, Substructure of the Floyd Warshall Algorithm</em></p>
 
 
 Why does Floyd Warshall work?
