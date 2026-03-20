@@ -6,11 +6,10 @@ which is dedicated to computing the transitive closure of a graph. The computati
 closure is adapted in order to retain, among all paths connecting two vertices, those with the smallest
 value. 
 
-![img.png](img.png)
+<p align="center">![img.png](img.png)</p>
+<p align="center>Figure 1.1, Substructure of the Floyd Warshall Algorithm</p>
 
-<p align="center">
-    <img width="200" src="http://material-bread.org/logo-shadow.svg" alt="Material Bread logo">
-</p>
+
 
 Why does Floyd Warshall work?
 The algorithm relies on the principle of optimal substructure, meaning:
