@@ -7,7 +7,7 @@ closure is adapted in order to retain, among all paths connecting two vertices, 
 value. 
 
 <p align="center">![img.png](img.png)</p>
-<p align="center>Figure 1.1, Substructure of the Floyd Warshall Algorithm</p>
+<p align="center">Figure 1.1, Substructure of the Floyd Warshall Algorithm</p>
 
 
 
