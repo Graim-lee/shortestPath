@@ -1,6 +1,9 @@
 #ifndef SHORTESTPATH_GRAPHHANDLER_H
 #define SHORTESTPATH_GRAPHHANDLER_H
 
+/**
+ * Creation of graph structure
+ */
 struct graph{
     int nbVertices;
     int nbArcs;
