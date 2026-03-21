@@ -1,7 +1,7 @@
 #include "graphHandler.h"
 #include "stdio.h"
 #include "stdlib.h"
-
+#include "floydWarshall.h"
 GRAPH* createGraph(int nbVertices, int nbArcs){
     GRAPH* graph = (GRAPH*)malloc(sizeof(GRAPH));
     graph->nbVertices = nbVertices;
@@ -15,7 +15,9 @@ GRAPH* createGraph(int nbVertices, int nbArcs){
 
     for(int i =0; i<nbVertices; i++){
         for(int y = 0; y<nbVertices; y++){
-            matrix[i][y] = 0;
+            // initialize with inf values
+            // can't put 0 because we need to consider weight = 0 values
+            matrix[i][y] = INF;
         }
     }
 
@@ -40,7 +42,7 @@ GRAPH* createGraphFromFile(char* fileName){
 
     FILE *file = fopen(fileName, "r");
     if(file == NULL){
-        printf("ERROR - couldn't open file\n");
+        printf("Error: Couldn't open file\n");
         return NULL;
 
     }
@@ -89,8 +91,30 @@ void displayMatrix(int** matrix, int nbVertices){
     for(int i = 0; i < nbVertices; i++){
         printf("%2d | ", i);
         for(int y = 0; y < nbVertices; y++){
-            printf("%3d ", matrix[i][y]);
+            if(matrix[i][y] == INF)
+                printf("%3s ", "INF");  // add this check
+            else
+                printf("%3d ", matrix[i][y]);
         }
         printf("\n");
     }
+}
+
+// freeGraph function
+void freeGraph(GRAPH* graph){
+    if(!graph) return;
+    for(int i = 0; i < graph->nbVertices; i++)
+        free(graph->matrix[i]);
+    free(graph->matrix);
+    for(int i = 0; i < graph->nbArcs; i++)
+        free(graph->arcs[i]);
+    free(graph->arcs);
+    free(graph);
+}
+
+// freeMatrix (for l & p)
+void freeMatrix(int** matrix, int n){
+    for(int i = 0; i < n; i++)
+        free(matrix[i]);
+    free(matrix);
 }

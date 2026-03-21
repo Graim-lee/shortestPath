@@ -10,17 +10,21 @@ int main(){
         printf("\nWhich graph to analyze? (-1 to quit): ");
         scanf("%d", &graphNumber);
 
-        if(graphNumber == -1) break;
+        if(graphNumber < -1) break;
 
-        sprintf(fileName, "../graphs/graph%d.txt", graphNumber);
+        sprintf(fileName, "../graphs/graph%d.txt",graphNumber);
 
         GRAPH* graph = createGraphFromFile(fileName);
         if(graph == NULL){
-            printf("ERROR - could not load graph %d\n", graphNumber);
+            printf("Error: could not load graph %d\n", graphNumber);
             continue;
         }
 
         printf("\nAdjacency matrix:\n");
+
+        // display adjacency matrix of directed weighted graph
+        // in adjacency matrix, diagonal (vertex on itself; = inf if no edge
+        // = weight value if edge
         displayMatrix(graph->matrix, graph->nbVertices);
 
         int** L = NULL;
@@ -50,6 +54,10 @@ int main(){
                 scanf(" %c", &answer);
             }
         }
+        int n = graph->nbVertices;
+        freeGraph(graph);
+        if(L) freeMatrix(L, n);
+        if(P) freeMatrix(P, n);
     }
 
     printf("Goodbye!\n");

@@ -16,12 +16,15 @@ int floydWarshall(GRAPH* graph, int*** L, int*** P){
         for(int j = 0; j < n; j++){
 
             // diagonal (vertex on itself)
-            if(i == j){
+            if(i == j && graph->matrix[i][j] == INF){
+                // if NO loop on itself( value = 0 pred = -1 )
                 dist[i][j] = 0;
                 pred[i][j] = -1;
+
+
             }
             // if value in adjacency matrix, put it in dist[i][j]
-            else if(graph->matrix[i][j] != 0){
+            else if(graph->matrix[i][j] != INF){
                 dist[i][j] = graph->matrix[i][j];
                 pred[i][j] = i;
 
@@ -33,8 +36,8 @@ int floydWarshall(GRAPH* graph, int*** L, int*** P){
         }
     }
 
-    //displayResult(pred,n);
-    //displayResult(dist,n);
+    // displayResult(pred,n);
+    // displayResult(dist,n);
 
     // Core algorithm
     for(int k = 0; k < n; k++){ // intermediate vertex
@@ -63,7 +66,7 @@ int floydWarshall(GRAPH* graph, int*** L, int*** P){
     for(int i = 0; i < n; i++){
         // if in diagonal negative value => negative cycle
         if(dist[i][i] < 0){
-            printf("ERROR - negative cycle detected at vertex %d\n", i);
+            printf("Error: negative cycle detected at vertex %d\n", i);
             *L = dist;
             *P = pred;
             return 1;
@@ -119,7 +122,7 @@ void displayPath(int** P, int start, int end, int nbVertices){
         path[size++] = current;
         current = P[start][current];
         if(size > nbVertices){
-            printf("ERROR - cycle detected during path reconstruction\n");
+            printf("Error: cycle detected during path reconstruction\n");
             return;
         }
     }
