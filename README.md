@@ -50,6 +50,8 @@ If, there is no absorbing circuit. \
 The user can print a path from a `start` vertex to and `end` vertex. \
 (Those vertices should be between 0 and the number of vertices - 1)
 
+If `start` = `end` the shortest path will always be the vertex and thats it.
+
 
 If an **absorbing circuit / negative cycle** is detected.\
 We stop the program and indicate the vertex for which we have an absorbing circuit.
