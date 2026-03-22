@@ -49,7 +49,9 @@ int main(){
                 scanf("%d", &end);
 
                 displayPath(P, start, end, graph->nbVertices);
-
+                if(L[start][end] != INF){
+                    printf("Length: %d", L[start][end]);
+                }
                 printf("\nAnother path? (y/n): ");
                 scanf(" %c", &answer);
             }
@@ -58,6 +60,8 @@ int main(){
         freeGraph(graph);
         if(L) freeMatrix(L, n);
         if(P) freeMatrix(P, n);
+
+        printf("------------------------------------------------------------------------------------------------------------------------");
     }
 
     printf("Goodbye!\n");
