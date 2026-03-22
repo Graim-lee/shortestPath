@@ -48,7 +48,7 @@ int main(){
                 printf("Ending vertex: ");
                 scanf("%d", &end);
 
-                displayPath(P, start, end, graph->nbVertices);
+                displayPath(P, L, start, end, graph->nbVertices);
 
                 printf("\nAnother path? (y/n): ");
                 scanf(" %c", &answer);
@@ -58,6 +58,8 @@ int main(){
         freeGraph(graph);
         if(L) freeMatrix(L, n);
         if(P) freeMatrix(P, n);
+
+        printf("------------------------------------------------------------------------------------------------------------------------");
     }
 
     printf("Goodbye!\n");

@@ -102,12 +102,12 @@ void displayResult(int** matrix, int nbVertices){
     }
 }
 
-void displayPath(int** P, int start, int end, int nbVertices){
+void displayPath(int** P, int**L, int start, int end, int nbVertices){
 
     // check for start / end not in the graph
     if (start>nbVertices || end>nbVertices || start<0 || end<0) {
         printf("You need to stay in the range of existing vertices");
-        printf("With 0 <= start and end <= %d",nbVertices-1);
+        printf("\nWith 0 <= start and end <= %d",nbVertices-1);
         return;
     }
     if(P[start][end] == -1){
@@ -137,5 +137,7 @@ void displayPath(int** P, int start, int end, int nbVertices){
         if(i > 0) printf("%d -> ", path[i]);
         else printf("%d", path[i]);
     }
+
+    printf("\nTotal weight: %d", L[start][end]);
     printf("\n");
 }
