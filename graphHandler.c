@@ -56,7 +56,7 @@ GRAPH* createGraphFromFile(char* fileName){
     GRAPH* graph = createGraph(nbVertices, nbArcs);
 
 
-
+    // read the file line by line and build the graph
     for(int i =0; i<graph->nbArcs; i++){
         int startVertex, endVertex, weight;
         fscanf(file, "%d %d %d", &startVertex, &endVertex, &weight);

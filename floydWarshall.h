@@ -20,6 +20,8 @@ int floydWarshall(GRAPH* graph, int*** L, int*** P);
 /**
  * Display resulting matrix from iterations in floydwarhsall
  * Displays the L and P matrix
+ * @param matrix to be displayed (n by n)
+ * @param nbVertices is the size of the matrix
  */
 void displayResult(int** matrix, int nbVertices);
 

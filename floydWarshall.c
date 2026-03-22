@@ -15,7 +15,8 @@ int floydWarshall(GRAPH* graph, int*** L, int*** P){
         pred[i] = (int*)malloc(n * sizeof(int));
         for(int j = 0; j < n; j++){
 
-            // diagonal (vertex on itself)
+            // check if the vertex make a cycle with himself
+            // by checking the diagonal
             if(i == j && graph->matrix[i][j] == INF){
                 // if NO loop on itself( value = 0 pred = -1 )
                 dist[i][j] = 0;
@@ -23,13 +24,15 @@ int floydWarshall(GRAPH* graph, int*** L, int*** P){
 
 
             }
+            // check if there is an edge between i-j
             // if value in adjacency matrix, put it in dist[i][j]
             else if(graph->matrix[i][j] != INF){
                 dist[i][j] = graph->matrix[i][j];
                 pred[i][j] = i;
-
+            }
+            // else, there is no edge between the two vertex i-j
             // if no edge -> INF and no predecessors (-1)
-            } else {
+            else {
                 dist[i][j] = INF;
                 pred[i][j] = -1;
             }
@@ -56,9 +59,9 @@ int floydWarshall(GRAPH* graph, int*** L, int*** P){
                 }
             }
         }
-        printf("L matrix:\n");
+        printf("Distance (L) matrix:\n");
         displayResult(dist, n);
-        printf("P matrix:\n");
+        printf("Predecessor (P) matrix:\n");
         displayResult(pred, n);
     }
 
