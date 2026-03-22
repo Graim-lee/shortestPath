@@ -58,6 +58,8 @@ We stop the program and indicate the vertex for which we have an absorbing circu
 
 ## Real case scenario
 
+Building links between atoms in complex molecules to represent them in 3D
+
 We can find the following files and directories:
 - `.h` files: to define structures and functions
 - `.c` files: to write our code
