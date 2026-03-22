@@ -4,7 +4,7 @@ The Floyd–Warshall algorithm makes it possible to compute minimum‑value path
 to any other vertex in a directed weighted graph. This algorithm is based on Warshall’s algorithm,
 which is dedicated to computing the transitive closure of a graph. The computation of this transitive
 closure is adapted in order to retain, among all paths connecting two vertices, those with the smallest
-value. 
+value.
 
 <p align="center">
   <img src="img.png" alt="Floyd Warshall diagram">
@@ -26,16 +26,16 @@ We can find the following pseudo code[^2]:\
 `for each vertex v do`\
 `     dist[v][v] = 0`\
 `for k from 1 to |V|`\
- `   for i from 1 to |V|`\
- `       for j from 1 to |V|`\
- `           if dist[i][j] > dist[i][k] + dist[k][j]` \
- `               dist[i][j] = dist[i][k] + dist[k][j]`\
- `           end if`
- 
-## Goal of this project: 
+`   for i from 1 to |V|`\
+`       for j from 1 to |V|`\
+`           if dist[i][j] > dist[i][k] + dist[k][j]` \
+`               dist[i][j] = dist[i][k] + dist[k][j]`\
+`           end if`
 
-This project goal is to implement the FloydWarshall algorithm for multiples graphs given by the teachers. 
-The following graphs can be found in the `graphs` file. 
+## Goal of this project:
+
+This project goal is to implement the FloydWarshall algorithm for multiples graphs given by the teachers.
+The following graphs can be found in the `graphs` file.
 
 We have to respect the following **constraints**:
 
@@ -66,7 +66,7 @@ We can find the following files and directories:
 
 
 
-### References: 
+### References:
 
 [^1]: Geeks4Geeks https://www.geeksforgeeks.org/dsa/floyd-warshall-algorithm-dp-16/
 [^2]: Wikipédia https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
