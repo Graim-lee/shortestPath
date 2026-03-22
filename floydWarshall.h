@@ -8,7 +8,7 @@
 /**
  * Implementation of the floydWarshall algorithm
  * Takes as an argument:
- * - the graph readed from a file
+ * - the graph read from a file
  * - A pointer of the distance matrix (L)
  * - A pointer of the predecessor matrix (P)
  *

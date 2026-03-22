@@ -10,7 +10,7 @@ int main(){
         printf("\nWhich graph to analyze? (-1 to quit): ");
         scanf("%d", &graphNumber);
 
-        if(graphNumber < -1) break;
+        if(graphNumber == -1) break;
 
         sprintf(fileName, "../graphs/graph%d.txt",graphNumber);
 

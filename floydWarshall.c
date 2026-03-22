@@ -107,7 +107,7 @@ void displayPath(int** P, int start, int end, int nbVertices){
     // check for start / end not in the graph
     if (start>nbVertices || end>nbVertices || start<0 || end<0) {
         printf("You need to stay in the range of existing vertices");
-        printf("With 0 <= start and end < %d",nbVertices);
+        printf("With 0 <= start and end <= %d",nbVertices-1);
         return;
     }
     if(P[start][end] == -1){

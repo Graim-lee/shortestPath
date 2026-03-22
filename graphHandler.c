@@ -47,7 +47,6 @@ GRAPH* createGraphFromFile(char* fileName){
 
     }
 
-// Use fscanf
     int nbVertices;
     fscanf(file, "%d", &nbVertices);
     int nbArcs;
