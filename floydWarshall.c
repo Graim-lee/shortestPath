@@ -105,7 +105,7 @@ void displayResult(int** matrix, int nbVertices){
 void displayPath(int** P, int**L, int start, int end, int nbVertices){
 
     // check for start / end not in the graph
-    if (start>nbVertices || end>nbVertices || start<0 || end<0) {
+    if (start>=nbVertices || end>=nbVertices || start<0 || end<0) {
         printf("You need to stay in the range of existing vertices");
         printf("\nWith 0 <= start and end <= %d",nbVertices-1);
         return;
