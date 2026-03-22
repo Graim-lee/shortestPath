@@ -28,6 +28,7 @@ void displayResult(int** matrix, int nbVertices);
 
 /**
  * @param P  predecessor matrix used to find the path
+ * @param L distance matrix
  * @param start starting vertex
  * @param end ending vertex
  * @param nbVertices nbvertices of the graph
@@ -35,6 +36,6 @@ void displayResult(int** matrix, int nbVertices);
  * How it works:
  * Starts from the end and go back using the P matrix until reach start
  */
-void displayPath(int** P, int start, int end, int nbVertices);
+void displayPath(int** P, int**L, int start, int end, int nbVertices);
 
 #endif

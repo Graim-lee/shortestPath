@@ -48,10 +48,8 @@ int main(){
                 printf("Ending vertex: ");
                 scanf("%d", &end);
 
-                displayPath(P, start, end, graph->nbVertices);
-                if(L[start][end] != INF){
-                    printf("Length: %d", L[start][end]);
-                }
+                displayPath(P, L, start, end, graph->nbVertices);
+
                 printf("\nAnother path? (y/n): ");
                 scanf(" %c", &answer);
             }
